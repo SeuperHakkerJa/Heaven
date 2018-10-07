@@ -27,7 +27,8 @@
                         <p class="card-text">{{ $step->instruction }}</p>
                         @if($step->status == 'complete')
                             <h5 class="text-primary">Status: {{ $step->status }}</h5>
-                            <p class="card-text">Record report:{{ $step->record->record_body }}</p>
+                            <img src="{{ $step->record->pic }}" class="img-rounded img-responsive" alt="">
+                            <h4 class="card-text">Record report:{{ $step->record->record_body }}</h4>
                             <a href="{{ route('check', ['doc_id' => $doctor->id, 'pa_id' => $patient->id, 'task_id' => $step->id]) }}" class="btn btn-primary">Check</a>
                         @elseif($step->status == 'checked')
                             <h5 class="text-success">Status: {{ $step->status }}</h5>

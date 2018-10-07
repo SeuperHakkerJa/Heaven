@@ -55,30 +55,15 @@
 
 
     <div class="container text-center my-4 mb-5">
-        <h1><strong>View our hospitals for more information!</strong></h1>
+        <h1><strong>Heaven v1.0!</strong></h1>
     </div>
 
-    <div class="bg-light container">
-        <div class="row">
-            @foreach(range(1,9) as $i)
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="https://www.freelogodesign.org/Content/img/logo.png" alt="logo">
-                        <div class="card-body">
-                            <h5>Hospital Name</h5>
-                            <p class="card-text">Hospital introduction</p>
-                            <p class="card-text">aduhfaodhfao aodfhao suuweb sdfafe dfawaeobw sdfsef</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-info">Main Page</a>
-                                    <a href="#" class="btn btn-sm btn-outline-info">Doctors</a>
-                                </div>
-                                <small class="text-muted">Started in: xxxx</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+    <div class="bg-light container text-center">
+        <h2>A platform focuses on the long term, continuous health care for post-operative rehabilitation.</h2>
+        <h3>The platform include functions:</h3>
+            <h4>Tracking Personal Health & Wellness report</h4>
+            <h4>Tracking your family members Wellness</h4>
+            <h4>Doctors provide instruction online.</h4>
+            <h4>Patient upload related pictures and files.</h4>
     </div>
 @endsection
