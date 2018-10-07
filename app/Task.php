@@ -11,4 +11,8 @@ class Task extends Model
     public function patient() {
         return $this->belongsTo(Patient::class);
     }
+
+    public function record() {
+        return $this->hasOne(Record::class);
+    }
 }

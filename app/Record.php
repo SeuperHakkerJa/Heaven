@@ -11,4 +11,8 @@ class Record extends Model
     public function patient() {
         return $this->belongsTo(Patient::class);
     }
+
+    public function task() {
+        return $this->belongsTo(Task::class);
+    }
 }

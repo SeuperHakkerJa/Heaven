@@ -15,9 +15,10 @@ class RecordsTableSeeder extends Seeder
 
         foreach (range(1,500) as $i) {
             DB::table('records')->insert([
-                'record_body'=>$faker->sentence,
-                'patient_id'=>random_int(1,100),
+                'record_body' => $faker->sentence,
+                'patient_id' => random_int(1,100),
                 'pic'=>$faker->url,
+                'task_id' => $i
             ]);
         }
     }

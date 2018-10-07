@@ -19,5 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/patient/{id}', 'PatientController@index')->name('patient');
+Route::get('/doctor/{id}', 'DoctorController@index')->name('doctor');
+Route::get('/doctor/{doc_id}/patient/{pa_id}', 'PatientController@detail')->name('detail');
 Route::get('/patient/{id}/upload/{task_id}', 'RecordController@index')->name('upload');
 Route::post('/patient/{id}/save/{task_id}', 'RecordController@store')->name('submit');
+Route::get('/doctor/{doc_id}/patient/{pa_id}/task/{task_id}/check', 'DoctorController@check')->name('check');
