@@ -15,6 +15,8 @@ class CreateDoctorsPatientsTable extends Migration
     {
         Schema::create('doctors_patients', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('patient_id');
+            $table->unsignedInteger('doctor_id');
             $table->timestamps();
         });
     }

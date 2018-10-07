@@ -4,15 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Schedule extends Model
 {
-    protected $table = "patients";
+    protected $table = 'schedules';
 
     public function doctor() {
         return $this->belongsTo(Doctor::class);
-    }
-
-    public function tasks() {
-        return $this->hasMany(Task::class);
     }
 }

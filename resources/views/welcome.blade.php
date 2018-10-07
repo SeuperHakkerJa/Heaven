@@ -1,98 +1,84 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('title')
+    Main website
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@section('content')
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100 img-responsive" src="https://www.uh.edu/research/_images/thrusts/header-accessible-healthcare.jpg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-center">
+                        <h1>Slide 1</h1>
+                        <h3>Text here text here Text here text here Text here text hereT ext here text here</h3>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Go to hospitals</a></p>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </div>
+            <div class="carousel-item">
+                <img class="w-100 img-responsive" src="http://solutionsdesignedforhealthcare.com/sites/default/files/styles/hero_landing_image/public/training.jpg?itok=LqN4pXHE" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption text-center">
+                        <h1>Slide 2</h1>
+                        <h3>Text here text here Text here text here Text here text hereT ext here text here</h3>
+                        <p><a class="btn btn-lg btn-warning" href="#" role="button">Go to doctors</a></p>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100 img-responsive" src="http://www.connectwithcare.org/wp-content/uploads/2014/02/connected-care-illustration.jpg" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption text-center">
+                        <h1>Slide 3</h1>
+                        <h3>Text here text here Text here text here Text here text hereT ext here text here</h3>
+                        <p ><a class="btn btn-lg btn-success" href="#" role="button">Start your experience</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <div class="container text-center my-4 mb-5">
+        <h1><strong>View our hospitals for more information!</strong></h1>
+    </div>
+
+    <div class="bg-light container">
+        <div class="row">
+            @foreach(range(1,9) as $i)
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="https://www.freelogodesign.org/Content/img/logo.png" alt="logo">
+                        <div class="card-body">
+                            <h5>Hospital Name</h5>
+                            <p class="card-text">Hospital introduction</p>
+                            <p class="card-text">aduhfaodhfao aodfhao suuweb sdfafe dfawaeobw sdfsef</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-info">Main Page</a>
+                                    <a href="#" class="btn btn-sm btn-outline-info">Doctors</a>
+                                </div>
+                                <small class="text-muted">Started in: xxxx</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endsection

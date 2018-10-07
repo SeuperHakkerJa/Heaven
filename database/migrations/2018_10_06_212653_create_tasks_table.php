@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePatientsTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
-            $table->integer('age');
-            $table->longText('what_happened')->nullable();
-            $table->date('date_of_surgery')->nullable();
-            $table->integer('doctor_id')->nullable();
+            $table->longText('to_do');
+            $table->longText('instruction');
+            $table->enum('status', ['incomplete', 'complete', 'checked'])->default('incomplete');
+            $table->date('assigned_time');
+            $table->date('finished_time');
+            $table->date('due_time');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreatePatientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('tasks');
     }
 }

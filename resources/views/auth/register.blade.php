@@ -26,6 +26,23 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Your identity</label>
+                            <div class="col-md-6">
+                                <select id="identity" name="role" required class="form-control">
+                                    <option value="patient">Patient</option>
+                                    <option value="doctor" >Doctor</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Your age</label>
+                            <div class="col-md-6">
+                                <input id="age" type="number" class="form-control" name="age" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

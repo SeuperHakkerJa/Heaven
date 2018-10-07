@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'link');
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class, 'link');
+    }
 }
