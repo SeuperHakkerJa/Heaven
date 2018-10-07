@@ -1,21 +1,40 @@
 <template>
-    <timeline>
-        <timeline-title>title</timeline-title>
-        <timeline-item bg-color="#9dd8e0">item1</timeline-item>
-        <timeline-item :hollow="true">item2</timeline-item>
-    </timeline>
+    <Timeline
+            :timeline-items="timelineItems"
+            :message-when-no-items="messageWhenNoItems"/>
 </template>
 
 <script>
-    import { Timeline, TimelineItem, TimelineTitle } from 'vue-cute-timeline'
+    import Timeline from 'timeline-vuejs';
     export default {
-        // register F7 Vue components in required Vue component
-        name: "timeline-component",
         components: {
-            Timeline,
-            TimelineItem,
-            TimelineTitle
-        }
+            Timeline
+        },
+        data: () => ({
+            messageWhenNoItems: 'There arent items',
+            timelineItems: [
+                {
+                    year: {
+                        from: '2017',
+                        to: '2018'
+                    },
+                    items: [
+                        {
+                            nameMonth: 'February',
+                            title: 'Five',
+                            description:
+                                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum architecto dolor, vitae magnam voluptate accusantium assumenda numquam error mollitia, officia facere consequuntur reprehenderit cum voluptates, ea tempore beatae unde.'
+                        },
+                        {
+                            nameMonth: 'January',
+                            title: 'Five',
+                            description:
+                                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum architecto dolor, vitae magnam voluptate accusantium assumenda numquam error mollitia, officia facere consequuntur reprehenderit cum voluptates, ea tempore beatae unde.'
+                        }
+                    ]
+                }
+            ]
+        })
     }
 </script>
 

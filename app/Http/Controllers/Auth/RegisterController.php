@@ -6,6 +6,7 @@ use App\Doctor;
 use App\Patient;
 use App\User;
 use App\Http\Controllers\Controller;
+use Faker\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -65,10 +66,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $faker = Factory::create();
         if($data['role'] == 'patient') {
             $patient = new Patient;
             $patient->name = $data['name'];
             $patient->age = $data['age'];
+            $patient->doctor_id = random_int(1,20);
+            $patient->what_happened = $faker->sentence;
+            $patient->date_of_surgery = $faker->date();
             $patient->save();
         }
         else if($data['role'] == 'doctor') {

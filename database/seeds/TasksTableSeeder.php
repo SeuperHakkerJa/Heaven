@@ -21,7 +21,8 @@ class TasksTableSeeder extends Seeder
                 'status' => $faker->randomElement(['incomplete', 'complete', 'checked']),
                 'assigned_time' => $faker->date(),
                 'finished_time' => $faker->date(),
-                'due_time' => $faker->date()
+                'due_time' => $faker->date(),
+                'patient_id' => random_int(1,100),
             ]);
         }
     }

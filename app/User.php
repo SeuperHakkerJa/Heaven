@@ -30,11 +30,11 @@ class User extends Authenticatable
 
     public function patient()
     {
-        return $this->belongsTo(Patient::class, 'link');
+        return $this->hasOne(Patient::class, 'id');
     }
 
     public function doctor()
     {
-        return $this->belongsTo(Doctor::class, 'link');
+        return $this->hasOne(Doctor::class, 'id');
     }
 }
