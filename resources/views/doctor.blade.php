@@ -1,9 +1,3 @@
-{{--@extends('layouts.app')--}}
-
-{{--@section('content')--}}
-
-{{--@endsection--}}
-
 @extends('layouts.app')
 
 @section('title')
@@ -20,6 +14,14 @@
                 <h1>{{ $doctor->name }}</h1>
             </div>
 
+            <div class="container m-5 col-10 offset-2">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Symptom</th>
+                    </tr>
             <div class="offset-4">
                 <table class="table">
                     <thead>

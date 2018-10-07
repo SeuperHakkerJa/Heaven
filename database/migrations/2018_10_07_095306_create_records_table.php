@@ -18,6 +18,7 @@ class CreateRecordsTable extends Migration
             $table->longText('record_body');
             $table->string('pic')->nullable();
             $table->integer('patient_id');
+            $table->integer('task_id');
             $table->timestamps();
         });
     }

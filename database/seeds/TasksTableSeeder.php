@@ -23,6 +23,7 @@ class TasksTableSeeder extends Seeder
                 'finished_time' => $faker->date(),
                 'due_time' => $faker->date(),
                 'patient_id' => random_int(1,100),
+                'record_id' => $i,
             ]);
         }
     }

@@ -23,6 +23,7 @@ class CreateTasksTable extends Migration
             $table->date('finished_time');
             $table->date('due_time');
             $table->integer('patient_id');
+            $table->integer('record_id');
             $table->timestamps();
         });
     }
