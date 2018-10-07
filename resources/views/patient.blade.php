@@ -52,7 +52,12 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $step->to_do }}</h5>
                         <p class="card-text">{{ $step->instruction }}</p>
-                        <a href="" class="btn btn-primary">Go somewhere</a>
+                        @if($step->status == 'incomplete')
+                            <h5>Status: {{ $step->status }}</h5>
+                            <a href="{{ route('upload', ['id' => $patient->id, 'task_id' => $step->id]) }}" class="btn btn-primary">upload record</a>
+                        @else
+                            <h5>Status: {{ $step->status }}</h5>
+                        @endif
                     </div>
                 </div>
             @endforeach
