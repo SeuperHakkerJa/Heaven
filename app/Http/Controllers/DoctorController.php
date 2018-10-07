@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
-
 use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+
 class DoctorController extends Controller
 {
     public function index($id) {
@@ -20,4 +21,5 @@ class DoctorController extends Controller
         $task->save();
         return redirect('/doctor/'.$doc_id.'/patient/'.$pa_id)->with(['doctor' => $doctor]);
     }
+}
 }

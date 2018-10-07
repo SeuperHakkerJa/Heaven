@@ -22,6 +22,14 @@
                         <th scope="col">Age</th>
                         <th scope="col">Symptom</th>
                     </tr>
+            <div class="offset-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Symptom</th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($doctor->patients as $patient)
