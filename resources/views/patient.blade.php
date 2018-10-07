@@ -53,10 +53,12 @@
                         <h5 class="card-title">{{ $step->to_do }}</h5>
                         <p class="card-text">{{ $step->instruction }}</p>
                         @if($step->status == 'incomplete')
-                            <h5>Status: {{ $step->status }}</h5>
+                            <h5 class="text-danger">Status: {{ $step->status }}</h5>
                             <a href="{{ route('upload', ['id' => $patient->id, 'task_id' => $step->id]) }}" class="btn btn-primary">upload record</a>
-                        @else
-                            <h5>Status: {{ $step->status }}</h5>
+                        @elseif($step->status == 'checked')
+                            <h5 class="text-success">Status: {{ $step->status }}</h5>
+                        @elseif($step->status == 'complete')
+                            <h5 class="text-primary">Status: {{ $step->status }}</h5>
                         @endif
                     </div>
                 </div>
