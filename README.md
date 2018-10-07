@@ -6,8 +6,5 @@
 ## The platform include functions:
 * Personal Health & Wellness report
 * Family Members Wellness
-* 33333
-* 4444
-
 
 ### Mingxuan Fan, Xiaochen Li, Takshi Yabuta 
